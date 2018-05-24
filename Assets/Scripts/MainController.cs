@@ -8,7 +8,7 @@ public class MainController : MonoBehaviour {
     private float lenRoad = 1.99f;
     private float wRoad = 1.58f;
     public Transform VRcamera;
-    private float toogle = 25f;
+    private float toogle = 20f;
     private int currentX = 1;
     private float currentChange = 0.5266f;
     private int flagMove = 0;//1 move left ,2 move right
@@ -34,7 +34,7 @@ public class MainController : MonoBehaviour {
     {
         //Debug.Log(VRcamera.eulerAngles.x);
         //Debug.Log(VRcamera.eulerAngles.z + "zzzz");
-        if (VRcamera.eulerAngles.x > 25 && VRcamera.eulerAngles.x < 75.0f)
+        if (VRcamera.eulerAngles.x > 25 && VRcamera.eulerAngles.x <  75.0f)
         {
             //Debug.Log("Down");
         }
@@ -123,7 +123,7 @@ public class MainController : MonoBehaviour {
                 //    currentX -= 1;
                 //    flagCurrentLane = false;
                 //}
-                Vector3 trans = Vector3.left * Variables.speed * Time.deltaTime;
+                Vector3 trans = Vector3.left * Variables.speed *1.2f* Time.deltaTime;
                 this.transform.Translate(trans);
                 currentChange -= Mathf.Abs(trans.x);
             }
